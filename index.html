@@ -43,11 +43,11 @@
         }
 
         nav a {
-            color: #fff;
+            color: #f50909;
             /* Link color */
             text-decoration: none;
             /* No underline */
-            font-size: 18px;
+            font-size: 22px;
             /* Font size */
             font-weight: 600;
             /* Font weight */
@@ -61,7 +61,7 @@
 
         nav a.active,
         nav a:hover {
-            color: #00E8F8;
+            color: #0d0d0d;
             /* Hover color */
             border-radius: 1rem;
             /* Border radius */
@@ -126,12 +126,13 @@
         }
 
         .social a {
-            color: #00E8F8;
+            color: #0a0a0a;
             /* Link color */
-            font-size: 1rem;
+            font-size: 30px;
             /* Font size */
-            border: 1.6px solid #00E8F8;
+            border: 1.6px solid #0d0d0d;
             /* Border style */
+            background-color: #fcfbfb;
             border-radius: 50%;
             /* Border radius */
             padding: 10px;
@@ -144,11 +145,11 @@
         }
 
         .social a:hover {
-            color: #1F252E;
+            color: #32c7db;
             /* Hover color */
-            background-color: #00E8F8;
+            background-color: #0d0d0d;
             /* Background color on hover */
-            box-shadow: 0 0 20px #00E8F8;
+            box-shadow: 0 0 20px #0b0b0b;
             /* Box shadow on hover */
             transition: all .3s ease-in-out;
             /* Transition effect */
@@ -231,7 +232,7 @@
         }
 
         .images {
-            background-image: url();
+            background-image: url(./assets/pexels-hngstrm-1793525.jpg);
             /* Background image (empty for now) */
             background-repeat: no-repeat;
             /* No repeat */
@@ -241,12 +242,18 @@
             /* Box shadow for Webkit */
             -moz-box-shadow: 0 10px 10px -10px #000000;
             /* Box shadow for Mozilla */
-            box-shadow: 0px 16px 4px -10px #00E8F8;
+            box-shadow: 0px 16px 4px -10px #080808;
             /* Box shadow */
             width: 528px;
             /* Width */
             background-size: cover;
             /* Cover background */
+        }
+
+        .background{
+            background-image: url(./assets/pexels-madebymath-331684.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         @keyframes check {
@@ -320,7 +327,7 @@
     </style>
 </head>
 
-<body>
+<body class="background">
     <!-- Body of the HTML document -->
     <header>
         <!-- Header section with navigation -->
@@ -358,7 +365,7 @@
             </div>
             <div class="images">
                 <!-- Placeholder for an image -->
-                <img src="./assets/photo1-removebg.png" alt="" width="80%" height="500px">
+                <img src="./assets/photo1-removebg-removebg-preview.png" alt="" width="80%" height="500px">
             </div>
         </div>
     </section>
