@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Page Title -->
+    <title>Odd or Even Checker</title>
+
+    <!-- CSS Styles -->
+    <style>
+        /* Container styles */
+        .container {
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            padding-top: 50px;
+            border-radius: 5%;
+            border-style: solid;
+            margin-top: 10%;
+            margin-left: 35%;
+        }
+
+        /* Input field styles */
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Background image styles */
+        .background {
+            background-image: url(./assets/pexels-magda-ehlers-pexels-1329297.jpg);
+            /* Background image URL */
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Button styles */
+        button {
+            padding: 10px 20px;
+            background-color: #000001;
+            /* Dark background color */
+            color: #fff;
+            /* White text color */
+            border: none;
+        }
+
+        /* Hover state for button */
+        button:hover {
+            background-color: #037003;
+            /* Dark green background color on hover */
+        }
+
+        /* Output message styling */
+        p {
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(9, 9, 9);
+            /* Green text color */
+        }
+    </style>
+
+    <!-- JavaScript for Odd/Even checking -->
+    <script>
+        function checkOddEven() {
+            var number = document.getElementById("numberInput").value; // Get input value
+
+            if (number % 2 === 0) {
+                document.getElementById("result").innerHTML = number + " is Even Number."; // Display if number is even
+            } else {
+                document.getElementById("result").innerHTML = number + " is Odd Number."; // Display if number is odd
+            }
+        }
+    </script>
+</head>
+
+<!-- Body with background image style -->
+
+<body class="background">
+
+    <!-- Container for the content -->
+    <div class="container">
+        <h1>Odd or Even Checker :-</h1> <!-- Heading for the page -->
+
+        <br><br>
+
+        <!-- Input field for number entry -->
+        <input type="number" id="numberInput" placeholder="Enter a number">
+
+        <!-- Button to trigger the check function -->
+        <button onclick="checkOddEven()">Check</button>
+
+        <!-- Paragraph to display the result of odd/even check -->
+        <p id="result"></p>
+    </div>
+
+</body>
+
+</html>

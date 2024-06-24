@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Age</title>
+
+    <!-- CSS Styles -->
+    <style>
+        /* Base styles for the body */
+        body {
+            background-color: rgb(6, 6, 6);
+            /* Dark background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles to center content */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            /* Full viewport height */
+        }
+
+        /* Input field styles */
+        input {
+            padding: 10px 20px;
+            border-radius: 10px;
+            outline: none;
+            margin-bottom: 20px;
+            width: 80%;
+            /* 80% width of its container */
+            max-width: 300px;
+            /* Maximum width to maintain readability */
+            font-size: 16px;
+        }
+
+        /* Button styles */
+        button {
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: black;
+            /* Black background */
+            color: white;
+            /* White text color */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Background image styles */
+        .background {
+            background-image: url(./assets/pexels-cottonbro-4669141.jpg);
+            /* Background image URL */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* Ensure the background image is contained within the element */
+            width: 100vw;
+            /* Full viewport width */
+            height: 100vh;
+            /* Full viewport height */
+        }
+
+        /* Responsive design for smaller screens */
+        @media only screen and (max-width: 600px) {
+            input {
+                width: 90%;
+                /* Adjust width for smaller screens */
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            input {
+                width: 100%;
+                /* Further adjust width for very small screens */
+            }
+        }
+    </style>
+
+    <!-- JavaScript for age calculation -->
+    <script>
+        function calculate() {
+            let age = document.getElementById("age").value; // Get age input
+            if (age >= 18) {
+                document.write("Eligible For Voting"); // Display message if age is 18 or above
+            } else {
+                document.write("Not Eligible For Voting"); // Display message if age is below 18
+            }
+        }
+    </script>
+</head>
+
+<body class="background">
+
+    <div class="container">
+        <input type="text" id="age" placeholder="Enter your age :"> <!-- Age input field -->
+        <button type="submit" onclick="calculate()">click here</button> <!-- Button to trigger age calculation -->
+    </div>
+
+</body>
+
+</html>

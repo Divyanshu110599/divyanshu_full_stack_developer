@@ -1,0 +1,150 @@
+<!-- HTML document without a specific document type declaration -->
+<html>
+
+<head>
+    <!-- Title of the HTML document -->
+    <title>Electricity Bill Calculator</title>
+    <style>
+        /* CSS styles for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Styling for the display area */
+        #display {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 40px;
+            height: 500px;
+        }
+
+        /* Styling for input fields */
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Styling for buttons */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            background-color: #b32400;
+        }
+
+        /* Background image styling */
+        .background {
+            background-image: url(./assets/pexels-lilartsy-1213447.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        // JavaScript function to calculate electricity bill
+        function calculateBill() {
+            // Fetching input values
+            let x = Number(document.getElementById("units").value);
+            let y = document.getElementById("late").value;
+            let output = 0;
+
+            // Calculation based on units consumed
+            if (x <= 50) {
+                output = x * 1.5;
+                document.getElementById("display").innerHTML = "Your Bill is rs " + output;
+
+                // Applying additional charges based on late payment days
+                if ((y > 10) && (y < 20)) {
+                    document.getElementById("display").innerHTML = output + 20 + "(Additional late fees aplicable)";
+                } else if ((y > 20) && (y < 25)) {
+                    document.getElementById("display").innerHTML = output + 50 + "(Additional late fees aplicable)";
+                } else if ((y > 25) && (y < 180)) {
+                    document.getElementById("display").innerHTML = output + 100 + "(Additional late fees aplicable)";
+                } else if (y >= 180) {
+                    document.getElementById("display").innerHTML = output + 20000 + "(You have been fined with rs 20000 and your Supply has been CUT)";
+                }
+
+            } else if ((x > 50) && (x < 151)) {
+                output = (50 * 1.5 + (x - 50) * 2.5) + (5 / 100) * x;
+                document.getElementById("display").innerHTML = "Your Bill is rs" + output;
+                if ((y > 10) && (y <= 20)) {
+                    document.getElementById("display").innerHTML = output + 20 + "(Additional late fees aplicable)";
+                } else if ((y > 20) && (y <= 25)) {
+                    document.getElementById("display").innerHTML = output + 50 + "(Additional late fees aplicable)";
+                } else if ((y >= 25) && (y < 180)) {
+                    document.getElementById("display").innerHTML = output + 100 + "(Additional late fees aplicable)";
+                } else if (y >= 180) {
+                    document.getElementById("display").innerHTML = output + 20000 + "(You have been fined with rs 20000 and your Supply has been CUT)";
+                }
+            } else if ((x > 150) && (x < 251)) {
+                output = (50 * 1.5 + (100) * 2.5 + (x - 150) * 3.5) + (10 / 100) * x;
+                document.getElementById("display").innerHTML = "Your Bill is rs" + output;
+                if ((y > 10) && (y <= 20)) {
+                    document.getElementById("display").innerHTML = output + 20 + "(Additional late fees aplicable)";
+                } else if ((y > 20) && (y <= 25)) {
+                    document.getElementById("display").innerHTML = output + 50 + "(Additional late fees aplicable)";
+                } else if ((y > 25) && (y <= 180)) {
+                    document.getElementById("display").innerHTML = output + 100 + "(Additional late fees aplicable)";
+                } else if (y >= 180) {
+                    document.getElementById("display").innerHTML = output + 20000 + "(You have been fined with rs 20000 and your Supply has been CUT)";
+                }
+            } else if (x > 250) {
+                output = (50 * 1.5 + (100) * 2.5 + (100) * 3.5 + (x - 250) * 5) + (20 / 100) * x;
+                document.getElementById("display").innerHTML = "Your Bill is rs" + output;
+                if ((y > 10) && (y <= 20)) {
+                    document.getElementById("display").innerHTML = output + 20 + "(Additional late fees aplicable)";
+                } else if ((y > 20) && (y <= 25)) {
+                    document.getElementById("display").innerHTML = output + 50 + "(Additional late fees aplicable)";
+                } else if ((y > 25) && (y <= 180)) {
+                    document.getElementById("display").innerHTML = output + 100 + "(Additional late fees aplicable)";
+                } else if (y >= 180) {
+                    document.getElementById("display").innerHTML = output + 20000 + "(You have been fined with rs 20000 and your Supply has been CUT)";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="background">
+    <!-- Main container for displaying the calculator -->
+    <div id="display">
+        <h2>Electricity Bill Calculator :-</h2>
+        <br>
+        <hr>
+        <!-- Input fields for units consumed and late payment days -->
+        <div><input type="number" id="units" placeholder="Enter units consumed...">
+            <h4>Late Payment Days (if any): </h4><input type="number" id="late" placeholder="Late Fees">
+        </div>
+        <br>
+        <!-- Button to calculate bill -->
+        <div class="submit"><button onclick="calculateBill()">
+                <h2>Calculate Bill</h2>
+            </button> <a href="electricity_Charges.html"> <br>
+                <h2>Charges related information: </h2>
+            </a></div>
+
+        <!-- Result display area -->
+        <div id="result"></div>
+    </div>
+</body>
+
+</html>
